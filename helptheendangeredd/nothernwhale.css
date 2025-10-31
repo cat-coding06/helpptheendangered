@@ -1,0 +1,402 @@
+* {
+  font-family: "Outfit";
+}
+
+
+/*------------HEADER--------------- */
+header {
+    background-color: #E8E8E8;
+    height: 150px;
+    margin: 0;
+    
+}
+
+.logo img {
+  margin: 0 50px;
+}
+
+body {
+    background-color:#0c1d0cf8;
+    padding: 0px;
+    margin: 0px;
+}
+/*------------NAVIGATION--------------- */
+
+.nav-one {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navli {
+    padding: 25px;
+    font-size: 25px;
+    color: black;
+}
+
+.navli a:hover {
+    color: #c3c2c2;
+}
+
+.navli a:visited {
+    color: #0c1d0c;
+}
+
+.container1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Hamburger menu checkbox (hidden) */
+.menu-checkbox {
+    display: none;
+}
+
+/* Hamburger menu button (styled label) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1000;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #0c1d0c;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+/* Transform hamburger to X when checkbox is checked */
+.menu-checkbox:checked ~ .menu-toggle span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu-checkbox:checked ~ .menu-toggle span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-checkbox:checked ~ .menu-toggle span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/*--------------Main content ------------*/
+
+/* Species page header  */
+.speciesheader {
+  /* background image + black tint come from inline style */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  min-height: 50vh;          /* header height */
+  padding: 32px 16px;        /* space around text */
+  display: flex;             
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  color:#c3c2c2;            /* light text */
+  border-radius: 0 0 16px 16px;
+}
+
+.speciesheader h1{
+  margin: 0 0 6px;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 800;
+}
+
+.speciesheader .text{
+  margin: 0 0 12px;
+  opacity: .95;
+  font-size: clamp(1rem, 2.7vw, 1.126rem);
+}
+
+.speciesheader .status{
+  display: inline-block;
+  background: #6c1e1e;       
+  color:#c3c2c2;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: .95rem;
+  box-shadow: 0 6px 14px rgba(0,0,0,.18);
+}
+
+/* small screens: give a bit more height */
+@media (max-width: 480px){
+  .species-hero{ min-height: 56vh; padding: 24px 12px; }
+}
+
+/* Species main content  */
+
+.speciesmain {
+    display: flex;
+    background-color: #c3c2c2;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 50px;
+    padding: 30px;
+}
+
+.speciesmaincontent{
+    flex-wrap: wrap;
+    order: -1;
+    width: 40%;
+    color: #0c1d0c;
+}
+
+.speciesmain img {
+    border-radius: 10px;
+}
+
+/* Species info list  */
+
+.speciesinfobox{
+    display: flex;
+    justify-content: center;
+    line-height: 34px;
+    padding: 10px;
+    margin: 20px;
+    
+}
+.infobox{
+    background-color:#c3c2c2;
+    width: 27em;
+    height: 19em;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.infobox ul {
+    list-style: none;
+    font-size: 20px;
+    color: #0c1d0c;
+}
+
+
+/*------------FOOTER--------------- */
+
+.sitefooter {
+  background-color: #E8E8E8;
+}
+
+.footercontent {
+  font-size: 15px;
+  padding: 20px;
+  margin: 0 50px;
+}
+
+
+
+/* Mobile responsive */
+@media screen and (max-width:480px){
+ 
+  .logo img {
+    width: 100px;
+    height: auto;
+    margin: 0 20px;
+  }
+
+  /* Show hamburger menu button */
+  .menu-toggle {
+    display: flex;
+    margin-right: 20px;
+  }
+
+  /* Hide navigation by default, show when checkbox is checked */
+  .nav-one {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 280px;
+    height: 100vh;
+    background-color: #E8E8E8;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 80px 20px 20px 20px;
+    margin: 0;
+    transition: right 0.3s ease;
+    z-index: 999;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .menu-checkbox:checked ~ .nav-one {
+    right: 0;
+  }
+
+  .navli {
+    padding: 15px 0;
+    font-size: 18px;
+    width: 100%;
+    border-bottom: 1px solid #c3c2c2;
+  }
+
+  .navli a {
+    display: block;
+    width: 100%;
+  }
+
+  header {
+    height: auto;                     
+    padding-bottom: 10px;
+    position: relative;
+  }
+
+  .container1 {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .speciesheader {
+    min-height: 40vh;
+    padding: 24px 12px;
+  }
+
+  .speciesheader h1 {
+    font-size: 2rem;
+  }
+
+  .speciesmain {
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .speciesmaincontent {
+    width: 100%;
+    order: 1;
+    font-size: 16px;
+  }
+
+  .speciesmaincontent h1 {
+    font-size: 1.5rem;
+  }
+
+  .speciesmaincontent h2 {
+    font-size: 1.2rem;
+  }
+
+  .speciesmainimg {
+    width: 100%;
+    text-align: center;
+  }
+
+  .speciesmainimg img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .speciesinfobox {
+    margin: 20px 10px;
+  }
+
+  .infobox {
+    width: 100%;
+    max-width: 27em;
+    height: auto;
+    min-height: 19em;
+    padding: 20px;
+  }
+
+  .infobox ul {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .footercontent {
+    margin: 0 20px;
+    font-size: 14px;
+  }
+}
+
+/* Tablet responsive */
+
+@media screen and (min-width: 481px) and (max-width: 940px) {
+
+  /* Show hamburger menu button */
+  .menu-toggle {
+    display: flex;
+    margin-right: 20px;
+  }
+
+  /* Hide navigation by default, show when checkbox is checked */
+  .nav-one {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 60%;
+    max-width: 320px;
+    height: 100vh;
+    background-color: #E8E8E8;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 80px 20px 20px 20px;
+    margin: 0;
+    transition: right 0.3s ease;
+    z-index: 999;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .menu-checkbox:checked ~ .nav-one {
+    right: 0;
+  }
+
+  .navli {
+    font-size: 20px;
+    padding: 15px 0;
+    width: 100%;
+    border-bottom: 1px solid #c3c2c2;
+  }
+
+  .navli a {
+    display: block;
+    width: 100%;
+  }
+
+  .speciesheader {
+    min-height: 45vh;
+  }
+
+  .speciesmain {
+    flex-wrap: wrap;
+    margin: 30px;
+    padding: 25px;
+  }
+
+  .speciesmaincontent {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .speciesmainimg {
+    width: 100%;
+    text-align: center;
+  }
+
+  .speciesmainimg img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+  }
+
+  .infobox {
+    max-width: 90%;
+  }
+}

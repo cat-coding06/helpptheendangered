@@ -1,0 +1,565 @@
+/* Global Styles */
+* {
+  font-family: "Outfit";
+}
+
+header {
+    background-color: #E8E8E8;
+    height: 150px;
+    margin: 0;
+    
+}
+
+.logo img {
+  margin: 0 50px;
+}
+
+body {
+    background-color: #c3c2c2;
+    padding: 0px;
+    margin: 0px;
+}
+
+.nav-one {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navli {
+    padding: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    color: black;
+}
+
+.navli a:hover {
+    color: #c3c2c2;
+}
+
+.navli a:visited {
+    color: #0c1d0c;
+}
+
+.container1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Hamburger menu checkbox (hidden) */
+.menu-checkbox {
+    display: none;
+}
+
+/* Hamburger menu button (styled label) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1000;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #0c1d0c;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+/* Transform hamburger to X when checkbox is checked */
+.menu-checkbox:checked ~ .menu-toggle span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu-checkbox:checked ~ .menu-toggle span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-checkbox:checked ~ .menu-toggle span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+
+
+
+/* --------HEADER---------- */
+
+.ctasection {
+  height: 600px;
+  display: flex;
+  background-image:
+  url(images/leaves-318743_1280.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta {
+  width: 600px;
+  height: 500px;
+  display: flex;
+  background-color: #e7e7e7;
+  position: relative;
+  z-index: 2;
+  border-radius: 10px;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 7px;
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.cta a {
+  color: #E8E8E8;
+  font-size: 20px;
+  background-color: #0c1d0c;
+  padding: 30px;
+  border-radius: 50px;
+}
+
+.cta a:hover {
+  color:#0c1d0c;
+  background-color:#1c2b1c80; 
+}
+
+.cta h2 {
+  font-weight: 800;
+  font-size: 30px;
+  padding: 20px;
+  margin: 0;
+  color: #0c1d0c;
+}
+
+.cta p {
+  padding: 20px;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+
+
+/* image for header with gradient  */
+.gradientheader {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+
+  background-image:
+    linear-gradient(to bottom, rgba(56, 75, 56, 0.85), rgba(195, 194, 194, 0)),
+    url('images/gibbon-8573117_1280.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  border-radius: 0 0 30px 30px;
+  color: #e7e7e7;
+  position: relative;
+  
+}
+
+
+
+
+/* gradient at the end of header, blends in with body  */
+.gradientheader::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to bottom, rgba(195, 194, 194, 0), #c3c2c2);
+}
+
+
+
+/* main heading of the page  */
+.gradientheader h1 {
+  font-size: 3rem;
+  font-family: "Lucida Sans", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+/* tag line of the page  */
+.gradientcontent {
+  position: relative;
+  z-index: 2;
+  padding: 0 20px;
+  max-width: 800px;
+}
+
+.gradientheader p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 1.1rem;
+  opacity: 0.9;
+  color: #eaeaea;
+}
+
+/* ----------Main---------------  */
+
+/* NOAA section  */
+
+
+.main_sec {
+  margin: 40px 100px;
+  font-family: "Outfit";
+}
+
+.recoverysec {
+  display: flex;
+  justify-content: space-evenly;
+  font-family: "Outfit";
+}
+
+.recoverysec p {
+  width: 800px;
+  order: -1;
+  align-items: center;
+  font-size: 18px;
+}
+
+.recoverysec img {
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(12, 29, 12, 0.4);
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+}
+
+
+
+
+
+
+
+/* Pollution cards  */
+
+.helpsection {
+  margin: 40px 100px;
+  font-family: "Outfit";
+}
+
+.helpcardsec {
+  display: flex;
+  gap: 15px;
+  padding: 25px;
+  align-items: center;
+  justify-content: center;
+}
+
+.helpcard {
+  width: 500px;
+  height: 350px;
+  background-color: #0c1d0ce1;
+  padding: 10px;
+  border-radius: 10px;
+  font-family: 'Lucida Sans Unicode';
+  color: #E8E8E8;
+}
+
+.helpcard h3 {
+  padding: 6px;
+}
+
+.helplist {
+  line-height: 30px;
+}
+
+/* Footer  */
+
+.sitefooter {
+  background-color: #E8E8E8;
+}
+
+.footercontent {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  padding: 20px;
+  margin: 0 50px;
+}
+
+
+/* mobile responsive */
+
+@media screen and (max-width:480px){
+
+  .logo img {
+    width: 100px;
+    height: auto;
+    margin: 0 20px;
+  }
+
+  /* Show hamburger menu button */
+  .menu-toggle {
+    display: flex;
+    margin-right: 20px;
+  }
+
+  /* Hide navigation by default, show when checkbox is checked */
+  .nav-one {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 280px;
+    height: 100vh;
+    background-color: #E8E8E8;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 80px 20px 20px 20px;
+    margin: 0;
+    transition: right 0.3s ease;
+    z-index: 999;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .menu-checkbox:checked ~ .nav-one {
+    right: 0;
+  }
+
+  .navli {
+    padding: 15px 0;
+    font-size: 18px;
+    width: 100%;
+    border-bottom: 1px solid #c3c2c2;
+  }
+
+  .navli a {
+    display: block;
+    width: 100%;
+  }
+
+  header {
+    height: auto;                     
+    padding-bottom: 10px;
+    position: relative;
+  }
+
+  .gradientheader {
+    height: 300px;
+    background-attachment: scroll;
+  }
+
+  .gradientheader h1 {
+    font-size: 2rem;
+  }
+
+  .gradientheader p {
+    font-size: 1rem;
+  }
+
+  .main_sec {
+    margin: 20px;
+  }
+
+  .recoverysec {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .recoverysec img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    box-shadow: none;
+  }
+
+  .recoverysec p {
+    width: 100%;
+    font-size: 16px;
+    order: 1;
+  }
+
+  .recoverysec2 {
+    margin-top: 20px;
+  }
+
+  .recoverysec2 p {
+    font-size: 16px;
+  }
+
+  .noasec h1 {
+    font-size: 1.5rem;
+  }
+
+  .noasec h3 {
+    font-size: 1.2rem;
+  }
+
+  .helpsection {
+    margin: 20px;
+  }
+
+  .helpsection h1 {
+    font-size: 1.5rem;
+  }
+
+  .helpsection p {
+    font-size: 16px;
+  }
+
+  .helpcardsec {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .helpcard {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    padding: 15px;
+  }
+
+  .helplist {
+    font-size: 15px;
+    line-height: 25px;
+  }
+
+  .ctasection {
+    height: auto;
+    padding: 20px;
+    background-attachment: scroll;
+  }
+
+  .cta {
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    min-height: 400px;
+    padding: 20px;
+  }
+
+  .cta h2 {
+    font-size: 1.5rem;
+    padding: 15px;
+  }
+
+  .cta p {
+    font-size: 16px;
+  }
+
+  .cta a {
+    font-size: 18px;
+    padding: 20px 30px;
+  }
+
+  .footercontent {
+    margin: 0 20px;
+    font-size: 14px;
+  }
+}
+
+/* Tablet responsive */
+
+@media screen and (min-width: 481px) and (max-width: 940px) {
+
+  /* Show hamburger menu button */
+  .menu-toggle {
+    display: flex;
+    margin-right: 20px;
+  }
+
+  /* Hide navigation by default, show when checkbox is checked */
+  .nav-one {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 60%;
+    max-width: 320px;
+    height: 100vh;
+    background-color: #E8E8E8;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 80px 20px 20px 20px;
+    margin: 0;
+    transition: right 0.3s ease;
+    z-index: 999;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .menu-checkbox:checked ~ .nav-one {
+    right: 0;
+  }
+
+  .navli {
+    font-size: 20px;
+    padding: 15px 0;
+    width: 100%;
+    border-bottom: 1px solid #c3c2c2;
+  }
+
+  .navli a {
+    display: block;
+    width: 100%;
+  }
+
+  .gradientheader {
+    height: 400px;
+  }
+
+  .gradientheader h1 {
+    font-size: 2.5rem;
+  }
+
+  .main_sec {
+    margin: 30px 50px;
+  }
+
+  .recoverysec {
+    flex-wrap: wrap;
+  }
+
+  .recoverysec p {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .helpsection {
+    margin: 30px 50px;
+  }
+
+  .helpcardsec {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .helpcard {
+    flex: 1 1 45%;
+    min-width: 300px;
+    max-width: 500px;
+  }
+
+  .cta {
+    width: 70%;
+    max-width: 550px;
+  }
+}

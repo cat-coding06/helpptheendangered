@@ -1,0 +1,509 @@
+
+
+/* Global Styles */
+* {
+  font-family: "Outfit";
+}
+header {
+    background-color: #E8E8E8;
+    height: 150px;
+    margin: 0;
+    
+}
+
+.logo img {
+  margin: 0 50px;
+}
+
+body {
+    background-color: #c3c2c2;
+    padding: 0px;
+    margin: 0px;
+}
+
+.nav-one {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navli {
+    padding: 25px;
+    font-size: 25px;
+    color: black;
+}
+
+.navli a:hover {
+    color: #c3c2c2;
+}
+
+.navli a:visited {
+    color: #0c1d0c;
+}
+
+.container1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Hamburger menu checkbox (hidden) */
+.menu-checkbox {
+    display: none;
+}
+
+/* Hamburger menu button (styled label) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1000;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #0c1d0c;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+/* Transform hamburger to X when checkbox is checked */
+.menu-checkbox:checked ~ .menu-toggle span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu-checkbox:checked ~ .menu-toggle span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-checkbox:checked ~ .menu-toggle span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+
+
+/* --------INTRO--------- */
+
+/* image for header with gradient  */
+.gradientheader {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+
+  background-image:
+    linear-gradient(to bottom, rgba(56, 75, 56, 0.85), rgba(195, 194, 194, 0)),
+    url('images/raccoon-4377383_1280.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  border-radius: 0 0 30px 30px;
+  color: #e7e7e7;
+  position: relative;
+  
+}
+
+/* gradient at the end of header, blends in with body  */
+.gradientheader::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to bottom, rgba(195, 194, 194, 0), #c3c2c2);
+}
+
+/* main heading of the page  */
+.gradientheader h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+/* tag line of the page  */
+.gradientcontent {
+  position: relative;
+  z-index: 2;
+  padding: 0 20px;
+  max-width: 800px;
+}
+
+.gradientheader p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  color: #eaeaea;
+}
+
+
+
+/* ----BODY---- */
+.causes_heading {
+    font-size: 1.7rem;
+    text-align: center;
+}
+
+.causes_intro {
+    margin: 0 auto;
+    width: 90%;
+    font-size: 18px;
+    justify-content: center;
+    text-align: center;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.cause_section {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #0c1d0c28;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.causes_secheader {
+    margin: 60px;
+    font-size: 23px;
+    letter-spacing: 1px;
+}
+.causes_text {
+    font-size: 18px;
+    line-height: 27px;
+    width: 50%;
+}
+
+.causeimg img {
+    border-radius: 10px;
+    width: 350px;
+    height: 300px;
+}
+
+
+/* causes video section */
+
+.causes_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    aspect-ratio: 16 / 9;
+    gap: 10px;
+    height: 500px;
+}
+
+
+
+.causes_video {
+    width: 100%;
+    max-width: 560px;
+    position: relative;
+}
+
+.causes_video iframe {
+    width: 100%;
+    height: 315px;
+    max-width: 560px;
+}
+
+
+/* --------Footer--------- */
+
+.sitefooter {
+  background-color: #E8E8E8;
+  
+}
+
+.footercontent {
+  font-size: 15px;
+  padding: 20px;
+  margin: 0 50px;
+}
+
+
+
+
+/* --------mobile responsive-------- */
+@media screen and (max-width:475px){
+
+  /* first nav bar  */
+  .logo img {
+    width: 100px;
+    height:  auto;
+  }
+
+  /* Show hamburger menu button */
+  .menu-toggle {
+    display: flex;
+    margin-right: 20px;
+  }
+
+  /* Hide navigation by default, show when checkbox is checked */
+  .nav-one {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 280px;
+    height: 100vh;
+    background-color: #E8E8E8;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 80px 20px 20px 20px;
+    margin: 0;
+    transition: right 0.3s ease;
+    z-index: 999;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .menu-checkbox:checked ~ .nav-one {
+    right: 0;
+  }
+
+  .navli {
+    padding: 15px 0;
+    font-size: 18px;
+    width: 100%;
+    border-bottom: 1px solid #c3c2c2;
+  }
+
+  .navli a {
+    display: block;
+    width: 100%;
+  }
+
+  header {
+    position: relative;
+  }
+
+  /* ---------BODY--------- */
+  .cause_section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .causes_text{
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .causeimg img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .gradientheader {
+    height: 300px;
+    background-attachment: scroll;
+  }
+
+  .gradientheader h1 {
+    font-size: 2rem;
+  }
+
+  .gradientheader p {
+    font-size: 1rem;
+  }
+
+  .causes_secheader {
+    margin: 30px 20px;
+    font-size: 20px;
+  }
+
+  .causes_intro {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .container {
+    width: 95%;
+  }
+
+  .cause_section {
+    padding: 15px;
+  }
+
+  .causes_content {
+    height: auto;
+    padding: 20px 10px;
+  }
+
+  .causes_video {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .causes_video iframe {
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+    aspect-ratio: 16 / 9;
+    max-width: 100%;
+  }
+
+  .causes_text2 {
+    padding: 10px;
+  }
+
+  .causes_text2 h2 {
+    font-size: 1.3rem;
+  }
+
+  .causes_text2 p {
+    font-size: 16px;
+  }
+
+  .footercontent {
+    margin: 0 20px;
+    font-size: 14px;
+  }
+}
+
+/* Tablet responsive */
+
+@media screen and (min-width: 481px) and (max-width: 940px) {
+
+  /* Show hamburger menu button */
+  .menu-toggle {
+    display: flex;
+    margin-right: 20px;
+  }
+
+  /* Hide navigation by default, show when checkbox is checked */
+  .nav-one {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 60%;
+    max-width: 320px;
+    height: 100vh;
+    background-color: #E8E8E8;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 80px 20px 20px 20px;
+    margin: 0;
+    transition: right 0.3s ease;
+    z-index: 999;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .menu-checkbox:checked ~ .nav-one {
+    right: 0;
+  }
+
+  .navli {
+    font-size: 20px;
+    padding: 15px 0;
+    width: 100%;
+    border-bottom: 1px solid #c3c2c2;
+  }
+
+  .navli a {
+    display: block;
+    width: 100%;
+  }
+
+  .gradientheader {
+    height: 400px;
+  }
+
+  .gradientheader h1 {
+    font-size: 2.5rem;
+  }
+
+  .cause_section {
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+
+  .causes_text {
+    width: 100%;
+    font-size: 17px;
+    padding: 15px 0;
+  }
+
+  .causeimg {
+    width: 100%;
+    text-align: center;
+  }
+
+  .causeimg img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+
+  .causes_content {
+    height: auto;
+    padding: 25px;
+  }
+
+  .causes_video iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+  }
+
+  .container {
+    width: 90%;
+  }
+}
+
+
+
+
+
+/*---------Tablet responsive----------*/
+@media screen and (max-width: 940px){
+
+/* first nav bar  */
+  .nav-one {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    font-size: 3px;
+  }
+
+  .navli {
+    font-size: 18px;
+    padding: 9px;
+  }
+
+  /* ---------BODY--------- */
+
+  .cause_section img {
+     width: 300px;
+     height: auto;
+  }
+  .causes_text {
+    font-size: 17px;
+    width: 50%;
+  }
+}

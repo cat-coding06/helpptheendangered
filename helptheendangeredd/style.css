@@ -1,0 +1,485 @@
+* {
+  font-family: "Outfit";
+}
+
+
+/*------------HEADER--------------- */
+header {
+    background-color: #E8E8E8;
+    height: 150px;
+    margin: 0;
+    
+}
+
+.logo img {
+  margin: 0 50px;
+}
+
+/*------------NAVIGATION--------------- */
+
+/* First nav bar  */
+.nav-one {
+    list-style: none;
+    display: flex;  /* so that it stacks horizontally  */
+    justify-content: flex-end; /* so that it sticks to the end of the nav bar  */
+    padding: 30px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navli {
+    padding: 25px;
+    font-size: 25px;
+    color: black;
+}
+
+.navli a:hover {
+    color: #c3c2c2;
+}
+
+.navli a:visited {
+    color: #0c1d0c;
+}
+
+.container1 {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    align-items: center;
+}
+
+/* Hamburger menu checkbox (hidden) */
+.menu-checkbox {
+    display: none;
+}
+
+/* Hamburger menu button (styled label) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1000;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #0c1d0c;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+
+/* Transform hamburger to X when checkbox is checked */
+.menu-checkbox:checked ~ .menu-toggle span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu-checkbox:checked ~ .menu-toggle span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-checkbox:checked ~ .menu-toggle span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+
+/* Navigation card to species sections  */
+.navtwosec h2 {
+    font-size: 30px;
+    padding: 15px;
+    margin: 30px;
+}
+
+.navtwo {
+    display: flex;
+    gap: 10px;
+    margin: 20px;
+}
+
+.navcard { 
+    position: relative;
+    overflow: hidden; /* so that the image does not flow out of the card  */
+    display: flex;
+    background-color: #0c1d0c85 ;
+    flex: 1 1 230px;
+    margin: 10px;
+    width: 230px;
+    height: 250px;
+    border-radius: 25px;
+    text-decoration: none;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.navcard img {
+   position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    transform: scale(1);
+    transition: transform .35s ease;
+}
+
+.navcard span {
+    color: beige;
+    font-size: 25px;
+    z-index: 2; /* The text stays on top of the card  */
+    text-align: center;
+    text-decoration:  none;
+}
+
+.navcard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+
+.navcard:hover .navcardimg {
+  transform: scale(1.08);
+}
+
+.navcard:hover {
+  transform: translateY(-3px); /* the card moves up a bit on hover  */
+  box-shadow: 0 14px 26px rgba(0,0,0,.18);
+}
+
+
+/*------------BODY--------------- */
+body {
+    background-color: #c3c2c2;
+    padding: 0px;
+    margin: 0px;
+}
+
+.abt-end-content {
+    display: flex;
+    background-color: #0c1d0c;
+    padding: 40px;
+    justify-content: center;
+    gap: 50px
+}
+
+.abt-end-text{
+    width: 800px;
+    font-size: 18px;
+    color: beige;
+}
+
+
+/* ----------------HEADER IMAGE ---------------- */
+:root{
+  --ink:#0c1d0c;              /* deep green */
+  --ink-80: rgba(12,29,12,.8); /* overlay */
+  --cream:#f2f4f3;            /* light text */
+  --accent:#8fb49c;           /* soft green accent */
+}
+
+.headermain{
+  position: relative;
+  min-height: clamp(42vh, 56vw, 68vh);
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 0 0 18px 18px;          /* soft bottom corners */
+  box-shadow: 0 12px 24px rgba(0,0,0,.08);
+  background-repeat: no-repeat;
+}
+
+.headerimg{
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(180deg, rgba(12,29,12,.15) 0%, rgba(12,29,12,.6) 70%),
+    var(--hero-img);
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.02);              /* subtle edge bleed */
+}
+
+.headeroverlay{
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(60% 60% at 50% 40%, transparent 0%, rgba(0,0,0,.25) 100%),
+    linear-gradient(180deg, transparent 0%, rgba(12,29,12,.55) 60%, rgba(12,29,12,.85) 100%);
+   mix-blend-mode: multiply;             
+}
+
+.headertext{
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  width: min(92%, 64rem);
+  text-align: center;
+  color: var(--cream);
+  padding: clamp(1rem, 2vw, 2rem);
+  backdrop-filter: blur(0.6px);
+  animation: rise .7s ease-out both;
+}
+
+.headermain h1{
+  margin: 0 0 .5rem;
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: .2px;
+  font-size: clamp(1.8rem, 4vw + .4rem, 3rem);
+  line-height: 1.1;
+  text-shadow: 0 2px 12px rgba(0,0,0,.35);
+}
+
+.headermain p{
+  margin: .25rem auto 1.25rem;
+  max-width: 60ch;
+  font-size: clamp(1rem, 1.2vw + .6rem, 1.125rem);
+  line-height: 1.6;
+  opacity: .95;
+}
+
+.btn{
+  display: inline-block;
+  padding: .85rem 1.2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: .3px;
+  transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+  will-change: transform;
+}
+
+.btn--primary{
+  color: #0b1b0b;
+  background: var(--accent);
+  box-shadow: 0 8px 18px rgba(0,0,0,.18);
+}
+.btn--primary:hover{ transform: translateY(-2px); box-shadow: 0 12px 22px rgba(0,0,0,.22); }
+.btn--primary:active{ transform: translateY(0); box-shadow: 0 6px 14px rgba(0,0,0,.18); }
+
+/* small tweaks for tight screens */
+@media (max-width: 680px){
+  .hero{ border-radius: 0 0 14px 14px; }
+  .hero p{ padding: 0 .25rem; }
+}
+
+/* simple entrance */
+@keyframes rise{
+  from{ opacity: 0; transform: translateY(10px); }
+  to{ opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* Navigation on site  */
+
+.sidenav {
+  display: flex;
+  padding: 10px;
+  margin: 60px 10px;
+  gap: 20px;
+  justify-content: space-evenly;
+}
+
+.sidecard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: min(40%, 450px);
+  height: 500px;
+  padding: 20px;
+  background-color: #0b1b0b5f;
+  border-radius: 5px;
+}
+
+.sidecard img {
+  border-radius: 20px;
+}
+
+.sidecard h2 {
+  color: #0b1b0b;
+  width: 400px;
+  text-align: center;
+}
+
+.sidecard a {
+  color: beige;
+  font-size: 20px;
+}
+
+.sidecard a:hover {
+  background-color: #f2f4f3aa;
+  color: #0b1b0b;
+}
+
+
+/*------------FOOTER--------------- */
+
+.sitefooter {
+  background-color: #E8E8E8;
+}
+
+.footercontent {
+  font-size: 15px;
+  padding: 20px;
+  margin: 0 50px;
+}
+
+
+
+
+/*-----------Mobile responsive----------*/
+
+@media screen and (max-width:475px){
+
+  .logo img {
+    width: 100px;
+    height:  auto;
+  }
+
+  /* Show hamburger menu button */
+  .menu-toggle {
+    display: flex;
+    margin-right: 20px;
+  }
+
+  /* Hide navigation by default, show when checkbox is checked */
+  .nav-one {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 280px;
+    height: 100vh;
+    background-color: #E8E8E8;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 80px 20px 20px 20px;
+    margin: 0;
+    transition: right 0.3s ease;
+    z-index: 999;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .menu-checkbox:checked ~ .nav-one {
+    right: 0;
+  }
+
+  .navli {
+    padding: 15px 0;
+    font-size: 18px;
+    width: 100%;
+    border-bottom: 1px solid #c3c2c2;
+  }
+
+  .navli a {
+    display: block;
+    width: 100%;
+  }
+
+  header {
+    height: auto;                     
+    padding-bottom: 10px;
+    position: relative;
+  }
+
+  .logo img {
+    width: 100px;
+    height: auto;
+  }
+
+  .navtwo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .navcard{
+    width: 100%;
+  }
+
+  .sidecard {
+    width: 90%;
+  }
+}
+  
+
+
+/*---------Tablet responsive----------*/
+@media screen and (max-width: 940px){
+
+  .navtwo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+  /* Show hamburger menu button */
+  .menu-toggle {
+    display: flex;
+    margin-right: 20px;
+  }
+
+  /* Hide navigation by default, show when checkbox is checked */
+  .nav-one {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 60%;
+    max-width: 320px;
+    height: 100vh;
+    background-color: #E8E8E8;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 80px 20px 20px 20px;
+    margin: 0;
+    transition: right 0.3s ease;
+    z-index: 999; 
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .menu-checkbox:checked ~ .nav-one {
+    right: 0;
+  }
+
+  .navli {
+    font-size: 20px;
+    padding: 15px 0;
+    width: 100%;
+    border-bottom: 1px solid #c3c2c2;
+  }
+
+  .navli a {
+    display: block;
+    width: 100%;
+  }
+
+  .navcard{
+    width: 100%;
+  }
+
+  .sidenav {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+
+  .sidecard img {
+    width: 100%;
+    height: auto;
+  }
+}
